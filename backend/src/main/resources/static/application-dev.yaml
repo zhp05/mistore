@@ -1,0 +1,70 @@
+#开发环境配置
+
+server:
+  #https
+  port: 7001
+  #http
+  httpPort: 7000
+  ssl:
+    key-store: classpath:tomcat.keystore
+    key-store-password: liuxianchun
+    key-store-type: JKS
+    enabled: true
+    key-password: liuxianchun
+    #别名
+    key-alias: tomcat
+
+  servlet:
+    context-path: /
+
+spring:
+  resources:
+    cache:
+      cachecontrol:
+        max-age: 3600
+    chain:
+      cache: true
+      enabled: true
+      compressed: true   #启用压缩资源解析
+
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 10000
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true  #消息发送失败则通知生产者
+    listener:
+      simple:
+        acknowledge-mode: manual   #手动应答消息
+        concurrency: 5    #消费端最小并发数
+        max-concurrency: 10    #消费端最大并发数
+        prefetch: 5   #一次请求中预处理的消息数
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/xiaomi?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useAffectedRows=true
+    username: root
+    password: gim200577@163
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 1000
+    database: 0
+    lettuce:
+      pool:
+        max-active: 15
+        max-wait: 5000ms
+        max-idle: 10
+
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true  #启用表单REST风格
+    contentnegotiation:
+      favor-parameter: true  #开启请求参数内容协商
+
