@@ -1,7 +1,3 @@
-<!--
- * @Description: 商品秒杀页面组件
- * @Author: liuxianchun
- -->
 <template>
   <div id="seckill_details">
     <!-- 头部 -->
