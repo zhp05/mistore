@@ -19,6 +19,10 @@
 .error .main {
   margin: 0 362.5px;
   height: 500px;
+<<<<<<< HEAD
   background: url(../assets/imgs/error.png) no-repeat;
+=======
+  background: url(../../../../44/mistore/src/assets/imgs/error.png) no-repeat;
+>>>>>>> 7c0b2ff90b45b007493ba176911c5639a78ad750
 }
 </style>
