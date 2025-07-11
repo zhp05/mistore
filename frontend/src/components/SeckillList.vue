@@ -1,7 +1,4 @@
-<!--
- * @Description: 秒杀组件，用于首页、秒杀商品页面的商品列表
- * @Author: liuxianchun
- -->
+
 <template>
   <div id="SeckillList" class="SeckillList">
     <ul>
